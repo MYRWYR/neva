@@ -2,8 +2,8 @@ package funcs
 
 import (
 	"context"
+
 	"github.com/nevalang/neva/internal/runtime"
-	"time"
 )
 
 type unwrap struct{}
@@ -38,7 +38,6 @@ func (unwrap) Create(io runtime.FuncIO, _ runtime.Msg) (func(ctx context.Context
 
 			if item["last"].Bool() {
 				someOut <- item["data"]
-				time.Sleep(time.Millisecond * 1)
 				noneOut <- nil
 			} else {
 				select {
