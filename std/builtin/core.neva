@@ -8,6 +8,10 @@ component {
     #extern(lock)
     pub Lock<T>(sig any, data T) (data T)
 
+    // CountingLock passes a signal through after n instances of the signal.
+    #extern(counting_lock)
+    pub CountingLock(n int, sig any) (sig any)
+
     #extern(panic)
     pub Panic(msg any) ()
 

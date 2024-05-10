@@ -9,12 +9,13 @@ import (
 func CreatorRegistry() map[string]runtime.FuncCreator {
 	return map[string]runtime.FuncCreator{
 		// core
-		"new":    new{},
-		"del":    del{},
-		"lock":   lock{},
-		"match":  match{},
-		"unwrap": unwrap{},
-		"panic":  panicker{},
+		"new":           new{},
+		"del":           del{},
+		"lock":          lock{},
+		"counting_lock": countingLock{},
+		"match":         match{},
+		"unwrap":        unwrap{},
+		"panic":         panicker{},
 
 		// streamers
 		"array_port_to_stream": arrayPortToStream{},
